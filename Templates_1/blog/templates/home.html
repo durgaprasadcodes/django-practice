@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#1 Template</title>
+</head>
+
+<body>
+    <h1>Template Basics</h1>
+
+    {% comment %} This Comment Line {% endcomment %}
+    <p>Welcome to the blog home page !</p>
+
+    {% comment %} Single Variable {% endcomment %}
+
+    <p>Name : <b>{{name }}</b></p>
+    <p>Age : <b>{{age}}</b></p>
+
+    {% comment %} For Tag for Lists {% endcomment %}
+
+    <p>Skills :
+        {% for skill in skills %}
+        <li><b>{{skill}}</b></li>
+        {% endfor %}
+    </p>
+
+    {% comment %} Object Atribute {% endcomment %}
+
+    <p>Class Level Name : <b>{{user.name}}</b></p>
+    <p>Class Level Age: <b>{{user.age}}</b></p>
+
+    {% comment %} Dictionary {% endcomment %}
+
+    <p>Title : <b>{{blog.title}}</b></p>
+    <p>Content : {{blog.content|safe}}</p>
+    <p>created_time : <b>{{blog.created_time}}</b></p>
+
+    {% comment %} Empty Value {% endcomment %}
+
+    <p>{{emty_value|default:"None's Default String"}}</p>
+</body>
+
+</html>
