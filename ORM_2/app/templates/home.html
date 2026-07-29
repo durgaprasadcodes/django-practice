@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin DashBoard</title>
+</head>
+
+<body>
+    <h1>Students List</h1>
+    {% if students %}
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Emial</th>
+                <th>Mobile</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students%}
+            <tr>
+                <th>{{student.name}}</th>
+                <th>{{student.age}}</th>
+                <th>{{student.email}}</th>
+                <th>{{student.mobile}}</th>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <h1>No Students was in DataBase </h1>
+    {% endif %}
+</body>
+
+</html>
