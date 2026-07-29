@@ -10,7 +10,7 @@
 <body>
     <h1>Students List</h1>
     {% if students %}
-    <table>
+    <table border="1">
         <thead>
             <tr>
                 <th>Name</th>
@@ -22,10 +22,10 @@
         <tbody>
             {% for student in students%}
             <tr>
-                <th>{{student.name}}</th>
-                <th>{{student.age}}</th>
-                <th>{{student.email}}</th>
-                <th>{{student.mobile}}</th>
+                <td>{{student.name}}</td>
+                <td>{{student.age}}</td>
+                <td>{{student.email}}</td>
+                <td>{{student.mobile}}</td>
             </tr>
             {% endfor %}
         </tbody>
