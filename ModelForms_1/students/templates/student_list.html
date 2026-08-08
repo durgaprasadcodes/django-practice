@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Student List</h1>
+    <div class="nav">
+        <a href="{% url 'create_student' %}">Add Student</a>
+    </div>
+    {% if students %}
+    <ul>
+        {% for student in students %}
+        <li>
+            <a href="{% url 'student_details' student.id %}">{{student.name}} - {{student.email}} </a> -
+            <a href="{% url 'edit_student' student.id %}">Edit</a>
+            <a href="{% url 'delete_student' student.id %}">Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No Student Registered So far !!!</p>
+    {% endif %}
+</body>
+
+</html>
