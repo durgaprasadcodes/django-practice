@@ -1,0 +1,30 @@
+{% extends 'base.html'%}
+{% block title %} Student List {% endblock %}
+
+{% block content%}
+
+<div class="students">
+    {% if students %}
+    <h1>Students List</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students%}
+            <tr>
+                <td>{{student.name}}</td>
+                <td>{{student.email}}</td>
+            </tr>
+            {% endfor%}
+        </tbody>
+    </table>
+    {% else %}
+    <h1>No Studnets Registered !!!</h1>
+    {% endif %}
+</div>
+
+{% endblock %}
