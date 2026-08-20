@@ -1,0 +1,173 @@
+/* =========================================
+   TASK FORM
+========================================= */
+
+.task-form {
+    width: 100%;
+    max-width: 650px;
+    margin: 50px auto;
+    padding: 35px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+/* Heading */
+
+.task-form h1 {
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 32px;
+    color: #222;
+}
+
+/* Django form.as_p */
+
+.task-form p {
+    margin-bottom: 20px;
+}
+
+/* Labels */
+
+.task-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Text inputs + textarea */
+
+.task-form input[type="text"],
+.task-form textarea,
+.task-form input[type="datetime-local"],
+.task-form input[type="date"] {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d5d5d5;
+    border-radius: 8px;
+    outline: none;
+    font-size: 15px;
+    font-family: inherit;
+    transition: 0.2s ease;
+}
+
+/* Textarea */
+
+.task-form textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+/* Focus */
+
+.task-form input:focus,
+.task-form textarea:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+/* Checkbox */
+
+.task-form input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+/* Checkbox label */
+
+.task-form input[type="checkbox"]+label {
+    display: inline;
+    cursor: pointer;
+}
+
+/* Error messages */
+
+.task-form .errorlist {
+    margin: 6px 0;
+    padding: 0;
+    list-style: none;
+    color: #dc2626;
+    font-size: 14px;
+}
+
+/* Buttons */
+
+.task-form button {
+    padding: 12px 22px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+/* Submit */
+
+.task-form button[type="submit"] {
+    background: #6366f1;
+    color: white;
+}
+
+.task-form button[type="submit"]:hover {
+    background: #4f46e5;
+    transform: translateY(-1px);
+}
+
+/* Cancel */
+
+.task-form button[type="button"] {
+    margin-left: 10px;
+    background: #e5e7eb;
+    color: #333;
+}
+
+.task-form button[type="button"]:hover {
+    background: #d1d5db;
+}
+
+/* Cancel link */
+
+.task-form button[type="button"] a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Help text */
+
+.task-form .helptext {
+    display: block;
+    margin-top: 5px;
+    color: #777;
+    font-size: 13px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .task-form {
+        width: calc(100% - 30px);
+        margin: 30px auto;
+        padding: 25px;
+    }
+
+    .task-form h1 {
+        font-size: 26px;
+    }
+
+    .task-form button {
+        width: 100%;
+        margin-left: 0;
+    }
+
+}

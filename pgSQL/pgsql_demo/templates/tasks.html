@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %} Tasks Home {% endblock %}
+{% block content %}
+<div class="home">
+    <h1>Tasks List</h1>
+    {% if tasks %}
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Task Name</th>
+                <th>Description</th>
+                <th>Creation</th>
+                <th>Updation</th>
+                <th>Is Complted</th>
+                <th>Edit Task</th>
+                <th>Delete TAsk</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for task in tasks %}
+            <tr>
+                <td>{{task.task_name}}</td>
+                <td>{{task.task}}</td>
+                <td>{{task.created}}</td>
+                <td>{{task.updated}}</td>
+                <td>{{task.is_complete}}</td>
+                <td><a href="{% url 'editTask' id=task.id %}">Edit</a> </td>
+                <td><button command="show-modal" commandfor="popup-{{ task.id }}">Delete</button></td>
+            </tr>
+            <dialog id="popup-{{ task.id }}">
+                <h3>Are you sure to delete "{{task.task_name}}" Task?</h3>
+                <div class="btns">
+                    <button class="red" command="close" commandfor="popup-{{ task.id }}">
+                        <a href="{% url 'delete' id=task.id %}">Delete</a>
+                    </button>
+                    <button class="green" command="close" commandfor="popup-{{ task.id }}"><a
+                            href="{% url 'tasks' %}">Cancel</a></button>
+                </div>
+            </dialog>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p class="info">No Tasks are Registered !!!</p>
+    {% endif %}
+</div>
+{% endblock %}

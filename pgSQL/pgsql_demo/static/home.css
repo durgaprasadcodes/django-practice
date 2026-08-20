@@ -1,0 +1,418 @@
+.home {
+    width: 100%;
+    max-width: 1450px;
+    margin: 50px auto;
+    padding: 30px;
+
+    background: #ffffff;
+    border-radius: 20px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.home h1 {
+    margin: 0 0 35px;
+
+    text-align: center;
+
+    font-size: 38px;
+    font-weight: 800;
+
+    color: #1e293b;
+}
+
+.home h1::after {
+    content: "";
+
+    display: block;
+
+    width: 90px;
+    height: 4px;
+
+    margin: 12px auto 0;
+
+    border-radius: 10px;
+
+    background: linear-gradient(90deg,
+            #7c3aed,
+            #06b6d4);
+}
+
+
+/* =========================
+   TABLE
+========================= */
+
+.home table {
+    width: 100%;
+
+    border-collapse: separate;
+    border-spacing: 0;
+
+    overflow: hidden;
+
+    border: 1px solid #e2e8f0;
+
+    background: #ffffff;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.home thead {
+    background: linear-gradient(135deg,
+            #ede9fe,
+            #e0f2fe);
+}
+
+.home th {
+    padding: 18px 20px;
+
+    color: #334155;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    text-align: left;
+
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    border-bottom: 1px solid #dbe3ef;
+}
+
+
+/* =========================
+   TABLE BODY
+========================= */
+
+.home td {
+    padding: 18px 20px;
+
+    color: #475569;
+
+    font-size: 14px;
+
+    border-bottom: 1px solid #edf2f7;
+
+    vertical-align: middle;
+}
+
+
+/* Last row */
+
+.home tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* Hover */
+
+.home tbody tr {
+    transition: background 0.2s ease;
+}
+
+.home tbody tr:hover {
+    background: #f8fafc;
+}
+
+
+/* =========================
+   TASK NAME
+========================= */
+
+.home td:first-child {
+    color: #0f172a;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.home td:nth-child(2) {
+    max-width: 350px;
+
+    color: #64748b;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   DATES
+========================= */
+
+.home td:nth-child(3),
+.home td:nth-child(4) {
+    color: #64748b;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   COMPLETION
+========================= */
+
+.home td:nth-child(5) {
+    font-weight: 700;
+}
+
+
+/* =========================
+   BUTTON AREA
+========================= */
+
+.home td:nth-child(6),
+.home td:nth-child(7) {
+    text-align: center;
+}
+
+
+/* =========================
+   EDIT
+========================= */
+
+.home td:nth-child(6) a {
+    display: inline-block;
+
+    padding: 9px 20px;
+
+    color: #2563eb;
+
+    background: #eff6ff;
+
+    border: 1px solid #93c5fd;
+    border-radius: 9px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition: all 0.2s ease;
+}
+
+.home td:nth-child(6) a:hover {
+    color: #ffffff;
+
+    background: #2563eb;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.25);
+}
+
+
+/* =========================
+   DELETE
+========================= */
+
+.home td:nth-child(7) button {
+    padding: 9px 20px;
+
+    color: #dc2626;
+
+    background: #fef2f2;
+
+    border: 1px solid #fca5a5;
+    border-radius: 9px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.home td:nth-child(7) button:hover {
+    color: #ffffff;
+
+    background: #dc2626;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 5px 15px rgba(220, 38, 38, 0.25);
+}
+
+
+/* =========================
+   EMPTY TASK MESSAGE
+========================= */
+
+.home .info {
+    padding: 40px;
+
+    color: #64748b;
+
+    background: #f8fafc;
+
+    border: 1px dashed #cbd5e1;
+    border-radius: 12px;
+
+    text-align: center;
+
+    font-size: 17px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   DELETE DIALOG
+========================= */
+/* =========================================
+   DIALOG
+========================================= */
+
+dialog {
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    margin: 0;
+
+    width: min(420px, 90%);
+    padding: 30px;
+
+    background: #ffffff;
+
+    color: #1e293b;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.25);
+
+    z-index: 2000;
+}
+
+
+/* Background behind dialog */
+
+dialog::backdrop {
+    background: rgba(15, 23, 42, 0.55);
+
+    backdrop-filter: blur(2px);
+}
+
+
+/* Dialog heading */
+
+dialog h3 {
+    margin: 0;
+
+    color: #1e293b;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    text-align: center;
+}
+
+
+/* Dialog buttons */
+
+dialog .btns {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+
+dialog .btns button {
+    padding: 10px 22px;
+
+    border: none;
+    border-radius: 8px;
+
+    color: white;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+dialog .btns .red {
+    background: #dc2626;
+}
+
+
+dialog .btns .red:hover {
+    background: #b91c1c;
+}
+
+
+dialog .btns .green {
+    background: #16a34a;
+}
+
+
+dialog .btns .green:hover {
+    background: #15803d;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .home {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .home table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    .home th,
+    .home td {
+        white-space: nowrap;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .home {
+        margin: 25px auto;
+        padding: 15px;
+    }
+
+    .home h1 {
+        font-size: 28px;
+    }
+
+    .home th,
+    .home td {
+        padding: 13px;
+    }
+}
