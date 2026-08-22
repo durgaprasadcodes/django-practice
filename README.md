@@ -84,10 +84,10 @@ My goal is to become a job-ready Python Backend Developer by mastering:
 * [x] Django Basics
 * [x] Models & ORM
 * [x] Authentication
+* [x] PostgreSQL Integration
 * [ ] Django REST Framework
-* [ ] Advanced Django
-* [ ] PostgreSQL Integration
 * [ ] Deployment
+* [ ] Advanced Django
 * [ ] Production-Level Project
 
 ---
