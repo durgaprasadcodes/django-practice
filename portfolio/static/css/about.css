@@ -1,0 +1,119 @@
+/* About Page Stylesheet - Premium Dark Glassmorphism */
+
+.about-wrapper {
+    flex: 1;
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.about-header h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0 0 1rem 0;
+    background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.5px;
+}
+
+.about-header p {
+    color: #94a3b8;
+    font-size: 1.15rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.about-card {
+    background: rgba(30, 41, 59, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 1.75rem;
+    backdrop-filter: blur(16px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    background: rgba(30, 41, 59, 0.8);
+    border-color: rgba(99, 102, 241, 0.4);
+    box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.4), 0 0 20px rgba(99, 102, 241, 0.15);
+}
+
+.about-card .card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(168, 85, 247, 0.2));
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #38bdf8;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.about-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #f8fafc;
+    margin: 0;
+}
+
+.about-card p {
+    color: #94a3b8;
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.highlight-box {
+    margin-top: 3rem;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(236, 72, 153, 0.15) 100%);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    border-radius: 20px;
+    padding: 2.5rem;
+    text-align: center;
+    backdrop-filter: blur(12px);
+}
+
+.highlight-box h2 {
+    margin: 0 0 1rem 0;
+    font-size: 1.8rem;
+    color: #f8fafc;
+}
+
+.highlight-box p {
+    color: #cbd5e1;
+    font-size: 1.1rem;
+    margin: 0 0 1.5rem 0;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .about-wrapper {
+        margin: 2rem auto;
+    }
+    
+    .about-header h1 {
+        font-size: 2.3rem;
+    }
+}

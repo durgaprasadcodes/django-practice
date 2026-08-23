@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Durga Prasad Kota | Portfolio</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+
+    <div class="home-wrapper">
+        <div class="home">
+            <div class="part1">
+                <div class="badge-tag">
+                    <i class="fa-solid fa-sparkles"></i> Welcome to my portfolio
+                </div>
+                <h1>Hello, I'm <span class="gradient-text">{{ personal.name }}</span></h1>
+                <b>{{ personal.title }}</b>
+                <p class="subtitle">{{ personal.subtitle }}</p>
+                <p class="description">{{ personal.description }}</p>
+
+                <div class="btns">
+                    <button>
+                        <a href="{{ socials.github }}" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-github"></i> GitHub
+                        </a>
+                    </button>
+                    <button>
+                        <a href="{{ socials.linkedin }}" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-linkedin"></i> LinkedIn
+                        </a>
+                    </button>
+                    <button>
+                        <a href="{{ socials.leetcode }}" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-solid fa-code"></i> LeetCode
+                        </a>
+                    </button>
+                    <button>
+                        <a href="{{ socials.portfolio }}" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-solid fa-globe"></i> Portfolio
+                        </a>
+                    </button>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="number">{{ stats.projects }}+</div>
+                        <div class="label">Projects Completed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">{{ stats.leetcodeProblems }}+</div>
+                        <div class="label">LeetCode Solved</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">{{ stats.hackathons }}</div>
+                        <div class="label">Hackathons</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="part2">
+                <div class="img-container">
+                    <img src="{% static 'img/cat.jpeg' %}" alt="Durga Prasad Kota">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include 'footer.html' %}
+</body>
+
+</html>

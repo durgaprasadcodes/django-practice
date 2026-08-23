@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Skills | Durga Prasad Kota</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/skills.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+
+    <div class="skills-container">
+        <div class="skills-header">
+            <h1>My Technical Skills</h1>
+            <p>Technologies, frameworks, databases, and tools I work with to build software solutions.</p>
+        </div>
+
+        <div class="skills-grid">
+            {% for skill in skills %}
+            <div class="skill-card">
+                <div class="skill-icon-wrapper">
+                    {% if "Python" in skill %}
+                        <i class="fa-brands fa-python"></i>
+                    {% elif "React" in skill %}
+                        <i class="fa-brands fa-react"></i>
+                    {% elif "JavaScript" in skill %}
+                        <i class="fa-brands fa-js"></i>
+                    {% elif "HTML" in skill %}
+                        <i class="fa-brands fa-html5"></i>
+                    {% elif "CSS" in skill %}
+                        <i class="fa-brands fa-css3-alt"></i>
+                    {% elif "Docker" in skill %}
+                        <i class="fa-brands fa-docker"></i>
+                    {% elif "Git" in skill %}
+                        <i class="fa-brands fa-git-alt"></i>
+                    {% elif "GitHub" in skill %}
+                        <i class="fa-brands fa-github"></i>
+                    {% elif "SQL" in skill or "PostgreSQL" in skill or "MySQL" in skill %}
+                        <i class="fa-solid fa-database"></i>
+                    {% elif "MongoDB" in skill %}
+                        <i class="fa-solid fa-server"></i>
+                    {% elif "Machine Learning" in skill %}
+                        <i class="fa-solid fa-brain"></i>
+                    {% else %}
+                        <i class="fa-solid fa-code"></i>
+                    {% endif %}
+                </div>
+                <div class="skill-name">{{ skill }}</div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    {% include 'footer.html' %}
+</body>
+
+</html>

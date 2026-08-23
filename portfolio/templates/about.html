@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Durga Prasad Kota</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+
+    <div class="about-wrapper">
+        <div class="about-header">
+            <h1>About Me</h1>
+            <p>Passionate Python Full Stack Developer & AI/ML Enthusiast focused on building high-performance web applications and intelligent systems.</p>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-card">
+                <div class="card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <h3>Education & Focus</h3>
+                <p>B.Tech student pursuing Artificial Intelligence and Machine Learning with a focus on core computer science concepts and modern software engineering.</p>
+            </div>
+
+            <div class="about-card">
+                <div class="card-icon"><i class="fa-brands fa-python"></i></div>
+                <h3>Backend Engineering</h3>
+                <p>Specialized in Python backend technologies including Django and FastAPI to architect scalable, resilient RESTful APIs and web servers.</p>
+            </div>
+
+            <div class="about-card">
+                <div class="card-icon"><i class="fa-brands fa-react"></i></div>
+                <h3>Frontend Development</h3>
+                <p>Proficient in React.js, JavaScript, modern HTML5, and CSS3 to craft interactive, user-centric frontend web applications.</p>
+            </div>
+
+            <div class="about-card">
+                <div class="card-icon"><i class="fa-solid fa-brain"></i></div>
+                <h3>AI & Machine Learning</h3>
+                <p>Interested in Machine Learning models, Generative AI applications, and integrating intelligent features into full-stack products.</p>
+            </div>
+
+            <div class="about-card">
+                <div class="card-icon"><i class="fa-solid fa-code-compare"></i></div>
+                <h3>Problem Solving</h3>
+                <p>Regularly practice Data Structures and Algorithms on LeetCode to continuously sharpen analytical and algorithmic skills.</p>
+            </div>
+
+            <div class="about-card">
+                <div class="card-icon"><i class="fa-solid fa-rocket"></i></div>
+                <h3>Career Aspiration</h3>
+                <p>Dedicated to continuous learning and self-improvement with the ultimate goal of becoming an extraordinary Python Full Stack Developer.</p>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h2>Building the Future with Code & AI</h2>
+            <p>Thank you for visiting my portfolio. I am always open to new opportunities, collaborations, and engineering challenges!</p>
+        </div>
+    </div>
+
+    {% include 'footer.html' %}
+</body>
+
+</html>
