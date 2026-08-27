@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {% if posts %}
+    <ul>
+        {% for post in posts %}
+        <h2>{{post.title}}</h2>
+        <li>{{post.description}}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <h2>No Posts are Marked !!!</h2>
+    {% endif %}
+
+    {% if posts.has_previous %}
+    <a href="?page={{ posts.previous_page_number }}">Previous</a>
+    {% endif %}
+
+    {% if posts.paginator.num_pages %}
+    <span>Page {{ posts.number }} of {{ posts.paginator.num_pages }}</span>
+    {% endif %}
+
+    {% if posts.has_next %}
+    <a href="?page={{ posts.next_page_number }}">Next</a>
+    {% endif %}
+
+    <button><a href="{% url 'create_post' %}">Create Post</a></button>
+</body>
+
+</html>
