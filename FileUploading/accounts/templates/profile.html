@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>View Profile image</h2>
+<ul>
+    {% for prf in profile %}
+    <li>
+        <h1>{{prf.name}}</h1>
+        <img src="{{prf.image.url}}" alt="" width="200">
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
