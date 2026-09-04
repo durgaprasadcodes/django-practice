@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if posts %}
+<ul>
+    {% for post in posts %}
+    <li>
+        <h3><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h3>
+        <a href="{% url 'post_edit' post.pk %}">Edit</a>
+        <button type="button" command="show-modal" commandfor="delete-post-{{ post.pk }}">
+            Delete
+        </button>
+        <dialog id="delete-post-{{ post.pk }}">
+            <p>
+                Are you sure you want to delete "{{ post.title }}"?
+            </p>
+
+            <form method="post" action="{% url 'post_delete' post.pk %}">
+                {% csrf_token %}
+
+                <button type="submit">
+                    Yes, delete
+                </button>
+
+                <button type="button" command="close" commandfor="delete-post-{{ post.pk }}">
+                    Cancel
+                </button>
+            </form>
+        </dialog>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No Posts Uploaded</p>
+{% endif %}
+{% endblock %}

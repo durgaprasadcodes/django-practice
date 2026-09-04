@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Based View</title>
+</head>
+
+<body>
+    <nav>
+        <a href="{% url 'post_list' %}">My Blog</a>
+        <a href="{% url 'post_create' %}">New Post</a>
+    </nav>
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+
+</html>
