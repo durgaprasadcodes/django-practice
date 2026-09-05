@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Django</title>
+</head>
+
+<body style="margin: 0; padding: 0; background-color: #f4f4f4; font-family: Arial, sans-serif;">
+
+    <div style="max-width: 600px; margin: 40px auto; background-color: white;
+            border-radius: 10px; overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+
+        <!-- Header -->
+        <div style="background-color: #092e20; padding: 30px; text-align: center;">
+
+            <!-- Django Logo / Image -->
+            <img src="https://static.djangoproject.com/img/logos/django-logo-negative.png" alt="Django Logo" width="180"
+                style="max-width: 180px;">
+
+            <h1 style="color: white; margin-bottom: 0;">
+                Welcome to Django!
+            </h1>
+
+        </div>
+
+        <!-- Content -->
+        <div style="padding: 35px;">
+
+            <h2 style="color: #333;">
+                Hello {{ username }} 👋
+            </h2>
+
+            <p style="color: #555; font-size: 16px; line-height: 1.6;">
+                Welcome to the
+                <strong>{{ course }}</strong>.
+            </p>
+
+            <p style="color: #555; font-size: 16px; line-height: 1.6;">
+                We're excited to have you learning Django.
+                In this course, you will learn how to build powerful
+                and scalable web applications using Python and Django.
+            </p>
+
+            <!-- Course Box -->
+            <div style="background-color: #f1f8f5; padding: 20px;
+                    border-left: 5px solid #092e20;
+                    margin: 25px 0;">
+
+                <h3 style="margin-top: 0; color: #092e20;">
+                    Your Course
+                </h3>
+
+                <p style="margin-bottom: 0; color: #444;">
+                    {{ course }}
+                </p>
+
+            </div>
+
+            <p style="color: #555; font-size: 16px;">
+                Happy coding! 🚀
+            </p>
+
+            <p style="color: #333;">
+                <strong>Team Django</strong>
+            </p>
+
+        </div>
+
+        <!-- Footer -->
+        <div style="background-color: #eeeeee; padding: 20px; text-align: center;">
+
+            <p style="margin: 0; color: #777; font-size: 13px;">
+                This is an automated email from your Django application.
+            </p>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
