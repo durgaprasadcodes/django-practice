@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Delete user | Django Signals{% endblock %}
+
+{% block content %}
+<main>
+    <section class="panel">
+        <h1>Delete {{ object.name }}?</h1>
+        <p>This permanently removes {{ object.email }}.</p>
+        <form method="post">
+            {% csrf_token %}
+            <div class="actions">
+                <button class="button danger" type="submit">Delete user</button>
+                <a class="button secondary" href="{% url 'UserInfo' object.id %}">Cancel</a>
+            </div>
+        </form>
+    </section>
+</main>
+{% endblock %}

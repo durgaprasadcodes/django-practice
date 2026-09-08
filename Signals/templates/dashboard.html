@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Users | Django Signals{% endblock %}
+
+{% block content %}
+<main>
+    <section class="panel">
+        <h1>Users</h1>
+        <p>Manage the registered accounts.</p>
+
+        {% if users %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for account in users %}
+                <tr>
+                    <td>{{ account.name }}</td>
+                    <td>{{ account.email }}</td>
+                    <td><a href="{% url 'UserInfo' account.id %}">View</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p>No users have been registered yet.</p>
+        {% endif %}
+
+        <div class="actions"><a class="button" href="{% url 'Register' %}">Add user</a></div>
+    </section>
+</main>
+{% endblock %}

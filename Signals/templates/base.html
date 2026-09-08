@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Django Signals{% endblock %}</title>
+    <link rel="icon" href="https://images.seeklogo.com/logo-png/39/2/signal-logo-png_seeklogo-394272.png">
+    <style>
+        :root {
+            font-family: Arial, sans-serif;
+            color: #1f2937;
+            background: #f3f4f6;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 7%;
+            background: #111827;
+        }
+
+        nav a,
+        nav button {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        nav div {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        nav button {
+            border: 0;
+            background: transparent;
+            cursor: pointer;
+            font: inherit;
+            padding: 0;
+        }
+
+        main {
+            width: min(920px, 92%);
+            margin: 3rem auto;
+        }
+
+        .panel {
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 24px #11182714;
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .75rem;
+            margin-top: 1.5rem;
+        }
+
+        .button {
+            display: inline-block;
+            padding: .7rem 1rem;
+            border: 0;
+            border-radius: 6px;
+            color: white;
+            background: #2563eb;
+            text-decoration: none;
+            cursor: pointer;
+            font: inherit;
+        }
+
+        .button.secondary {
+            background: #4b5563;
+        }
+
+        .button.danger {
+            background: #dc2626;
+        }
+
+        label {
+            display: block;
+            margin: 1rem 0 .35rem;
+            font-weight: 600;
+        }
+
+        input {
+            width: 100%;
+            padding: .7rem;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font: inherit;
+        }
+
+        ul.errorlist {
+            padding: 0;
+            color: #b91c1c;
+            list-style: none;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.25rem;
+        }
+
+        th,
+        td {
+            padding: .85rem .5rem;
+            border-bottom: 1px solid #e5e7eb;
+            text-align: left;
+        }
+
+        @media (max-width: 560px) {
+            nav {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .panel {
+                padding: 1.25rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="{% url 'Dashboard' %}">Django Signals</a>
+        <div>
+            {% if user.is_authenticated %}
+            <span>{{ user.email }}</span>
+            <form method="post" action="{% url 'Logout' %}">
+                {% csrf_token %}
+                <button type="submit">Log out</button>
+            </form>
+            {% else %}
+            <a href="{% url 'Login' %}">Log in</a>
+            <a href="{% url 'Register' %}">Register</a>
+            {% endif %}
+        </div>
+    </nav>
+    {% block content %}
+    {% endblock %}
+</body>
+
+</html>

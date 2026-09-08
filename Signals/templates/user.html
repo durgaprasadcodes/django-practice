@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}{{ user.name }} | Django Signals{% endblock %}
+
+{% block content %}
+<main>
+    <section class="panel">
+        <h1>{{ user.name }}</h1>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>Joined:</strong> {{ user.date_joined|date:"F j, Y" }}</p>
+        <div class="actions">
+            <a class="button" href="{% url 'EditUserInfo' user.id %}">Edit</a>
+            <a class="button danger" href="{% url 'DeleteUser' user.id %}">Delete</a>
+            <a class="button secondary" href="{% url 'Dashboard' %}">Back to users</a>
+        </div>
+    </section>
+</main>
+{% endblock %}
