@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Signals App{% endblock %}</title>
+    <style>
+        :root {
+            --bg: #f3f6fb;
+            --card: #ffffff;
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --muted: #5b6475;
+            --text: #1f2937;
+            --border: #dfe7f5;
+            --success: #10b981;
+            --shadow: rgba(15, 23, 42, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #eef4ff, #f8fafc 35%, #edf7ff);
+            color: var(--text);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1100px, 92%);
+            margin: 0 auto;
+        }
+
+        .navbar {
+            background: rgba(17, 24, 39, 0.96);
+            color: white;
+            padding: 18px 0;
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: #e5eefb;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+        }
+
+        .page-wrap {
+            min-height: calc(100vh - 78px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 0;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            box-shadow: 0 18px 40px var(--shadow);
+        }
+
+        .hero {
+            max-width: 900px;
+            padding: 50px 42px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            margin: 0 0 16px;
+            font-size: clamp(2.2rem, 4vw, 4rem);
+            line-height: 1.1;
+        }
+
+        .hero p {
+            margin: 0 auto 28px;
+            max-width: 700px;
+            color: var(--muted);
+            font-size: 1.08rem;
+            line-height: 1.7;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            border: none;
+            border-radius: 10px;
+            padding: 13px 22px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-1px);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+        }
+
+        .btn-secondary {
+            background: #eef2ff;
+            color: var(--primary-dark);
+        }
+
+        .auth-shell {
+            width: min(460px, 92%);
+        }
+
+        .form-card {
+            padding: 32px 28px;
+        }
+
+        .form-card h2 {
+            margin: 0 0 24px;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        form p {
+            margin: 0 0 18px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        form input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        form input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+        }
+
+        form ul {
+            margin: 8px 0 0;
+            padding-left: 18px;
+            color: #b91c1c;
+            font-size: 0.9rem;
+        }
+
+        .form-card .btn {
+            width: 100%;
+            margin-top: 8px;
+        }
+
+        .dashboard-card {
+            width: min(820px, 92%);
+            padding: 36px 32px;
+        }
+
+        .dashboard-card h2 {
+            margin-top: 0;
+            font-size: 2rem;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 18px;
+            margin-top: 28px;
+        }
+
+        .stat-box {
+            background: #f8fbff;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 20px 18px;
+        }
+
+        .stat-box .label {
+            color: var(--muted);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .stat-box .value {
+            margin-top: 12px;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .small-note {
+            color: var(--muted);
+            margin-top: 18px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container nav-inner">
+            <div class="brand">Signals App</div>
+            <div class="nav-links">
+                <a href="{% url 'home' %}">Home</a>
+                {% if user.is_authenticated %}
+                <a href="{% url 'Dashboard' %}">Dashboard</a>
+                <a href="{% url 'EditUser' user.pk %}">Edit Profile</a>
+                <form method="post" action="{% url 'LogoutView' %}">
+                    {% csrf_token %}
+                    <button type="submit">Log out</button>
+                </form>
+                {% else %}
+                <a href="{% url 'Login' %}">Login</a>
+                <a href="{% url 'Registration' %}">Register</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-wrap">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+
+</html>

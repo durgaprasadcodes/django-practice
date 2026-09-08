@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="card hero">
+    <h1>Welcome to Signals App</h1>
+    <p>
+        Manage your account, create a profile, log in securely, and access your dashboard
+        from one clean and simple interface.
+    </p>
+
+    {% if not user.name %}
+    <div class="btn-group">
+        <a href="{% url 'Registration' %}" class="btn btn-primary">Create Account</a>
+        <a href="{% url 'Login' %}" class="btn btn-secondary">Login</a>
+    </div>
+    {% else %}
+    <div class="btn-group">
+        <a href="{% url 'Dashboard' %}" class="btn btn-primary">Go To DashBoard</a>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

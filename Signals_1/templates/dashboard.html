@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="card dashboard-card">
+    <h2>Welcome, {{ user.name|default:user.email }}</h2>
+    <p class="small-note">
+        This is your dashboard. You are logged in and can manage your profile details from here.
+    </p>
+
+    <div class="dashboard-grid">
+        <div class="stat-box">
+            <div class="label">Name</div>
+            <div class="value">{{ user.name }}</div>
+        </div>
+
+        <div class="stat-box">
+            <div class="label">Email</div>
+            <div class="value">{{ user.email }}</div>
+        </div>
+
+        <div class="stat-box">
+            <div class="label">Member Since</div>
+            <div class="value">{{ user.created_at }}</div>
+        </div>
+    </div>
+</div>
+{% endblock %}
