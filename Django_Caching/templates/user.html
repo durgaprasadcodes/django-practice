@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .users-container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .user-card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .user-card h2 {
+            margin: 0 0 10px;
+        }
+
+        .user-card p {
+            margin: 5px 0;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Users</h1>
+
+    <div class="users-container">
+
+        {% for user in users %}
+
+        <div class="user-card">
+            <h2>{{ user.name }}</h2>
+        </div>
+
+        {% empty %}
+
+        <p>No users found.</p>
+
+        {% endfor %}
+
+    </div>
+
+</body>
+
+</html>
